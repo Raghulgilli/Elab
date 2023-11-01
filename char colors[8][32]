@@ -1,0 +1,30 @@
+#include <iostream>
+#include <string>
+#include <map>
+using namespace std;
+void empty(){}
+map<pair<string, string>, string> colors = {
+    {{"RED", "YELLOW"}, "ORANGE"},{{"YELLOW", "RED"}, "ORANGE"},{{"YELLOW", "BLUE"}, "GREEN"},{{"BLUE", "YELLOW"}, "GREEN"},{{"BLUE", "RED"}, "PURPLE"},{{"RED", "BLUE"}, "PURPLE"},};
+int main() {
+    string color1, color2;
+    while (cin >> color1 >> color2) {
+        auto it = colors.find(make_pair(color1, color2));
+        if (it != colors.end()) {
+            cout << it->second << endl;
+        } else if (color1 == color2) {
+            cout << color1 << endl;} else if (color1 == "WHITE" || color2 == "WHITE") {
+            cout << "LIGHT ";
+            if (color1 == "WHITE") {
+                cout << color2 << endl;} else {
+                cout << color1 << endl;
+            }} else if (color1 == "BLACK" || color2 == "BLACK") {
+            cout << "DARK ";
+            if (color1 == "BLACK") {
+                cout << color2 << endl;} else {
+                cout << color1 << endl;}
+        } else {
+            cout << "N/A" << endl;
+        }}
+    return 0;
+    cout<< " char colors[8][32] char mixes[8][8][32] for(i=0;i<8;i++) if(strcmp(c,colors[i])==0)";
+}
